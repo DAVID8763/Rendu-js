@@ -44,7 +44,91 @@ function displayAvantage(data) {
     console.log(avantage);
 
     avantages.forEach(avantage => {
+        const descris = document.createElement("p");
+        //console.log (avantage):;
+
+        descris.textContent = avantage;
+        avantage1.appendChild(descris);
         
     });
     
 }
+
+
+function displayProducts(data)   {
+    let produits = data.produits;
+    data.forEach(produits => {
+        const article = document.createElement("article");
+        article.classlist.add("produit");
+        const title = document.createElement("h3");
+        const descris = document.createElement("p");
+        const image = document.createElement("img");
+
+    
+        title.textContent = produits.nom;
+        descris.textContent = produits.description;
+
+
+
+        console.log(produits)['image_url'];
+        image.src = produits['image url'];
+
+
+
+        article.appendChild(title);
+        article.appendChild(descirs);
+        article.appendChild(image);
+        
+        function displayProducts(data)  {
+            
+        }
+
+        function displayServices(data) {
+
+            let services = data.services;
+
+            services.forEach(services => {
+                const servicesclients = document.createElement("article");
+                servicesclients.classList.add("produit");
+                const title = document.createElement("h3");
+                const descris = document.createElement("p");
+
+
+
+
+                title.textContent = services.nom;
+                descri.textContent = services.description;
+
+
+
+                servicesclients.appendChild(title);
+                servicesclients.appendChild(descri);
+
+                service1.appendChild(servicesclients);
+
+
+                function displayTemoignage(data)  {
+                    let temoignages = data.temoignages;
+                    temoignages.forEach(temoignage =>  {
+                        const nomclient = document.createElement("h4");
+                        nonclient.textContent = temoignage.prenom;
+
+                        const commente = document.createElement("p");
+                        commente.textContent = temoignage.commentaire;
+
+                        const experience = document.createElement("p");
+                        experience.textContent = 
+
+                        temoignage.typeExperience;
+                        const note = document.createElement("p");
+
+
+                    }
+                )
+
+                
+            
+        }
+
+    });
+};
