@@ -67,9 +67,9 @@ function displayProducts(data) {
 
         title.textContent = produits.nom;
         descris.textContent = produits.description;
+    })
 
-
-
+}
         console.log(produits)['image_url'];
         image.src = produits['image url'];
 
@@ -102,7 +102,7 @@ function displayProducts(data) {
 
 
                 servicesclients.appendChild(title);
-                servicesclients.appendChild(descri);
+                servicesclients.appendChild(descris);
 
                 service1.appendChild(servicesclients);
 
@@ -122,6 +122,15 @@ function displayProducts(data) {
                             temoignage.typeExperience;
                         const note = document.createElement("p");
 
-                        note.textContent = 
-                    })}})}
-                    
+                        note.textContent ='${temoignage}/';
+
+                        nomclient.appendChild (commente);  
+                        nomclient.appendChild (experience); 
+                        nomclient.appendChild (note); 
+
+                        temoin.appendChild(nomclient);
+                        
+                    }
+
+                    )}})}
+                
