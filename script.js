@@ -1,5 +1,5 @@
 //Etappe 1 {Html} crée les ID 
-  
+
 
 //Etappe 2 {javasc} crée les card à partir du Html
 
@@ -25,18 +25,18 @@ const API_URL = "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f8315
 
 
 fetch(API_URL)
-.then(reponse => reponse.json())
-.then(data => {
-    console.log('Données récupées avec succès :', data);
+    .then(reponse => reponse.json())
+    .then(data => {
+        console.log('Données récupées avec succès :', data);
 
-    console.log(data.produits);
-    
+        console.log(data.produits);
 
-    displayAvantage(data);
-    displayShop(data);
-    displayTemoignage(data);
-    displayServices(data);
-})
+
+        displayAvantage(data);
+        displayShop(data);
+        displayTemoignage(data);
+        displayServices(data);
+    })
 
 
 function displayAvantage(data) {
@@ -49,13 +49,13 @@ function displayAvantage(data) {
 
         descris.textContent = avantage;
         avantage1.appendChild(descris);
-        
+
     });
-    
+
 }
 
 
-function displayProducts(data)   {
+function displayProducts(data) {
     let produits = data.produits;
     data.forEach(produits => {
         const article = document.createElement("article");
@@ -64,7 +64,7 @@ function displayProducts(data)   {
         const descris = document.createElement("p");
         const image = document.createElement("img");
 
-    
+
         title.textContent = produits.nom;
         descris.textContent = produits.description;
 
@@ -78,9 +78,9 @@ function displayProducts(data)   {
         article.appendChild(title);
         article.appendChild(descirs);
         article.appendChild(image);
-        
-        function displayProducts(data)  {
-            
+
+        function displayProducts(data) {
+
         }
 
         function displayServices(data) {
@@ -107,9 +107,9 @@ function displayProducts(data)   {
                 service1.appendChild(servicesclients);
 
 
-                function displayTemoignage(data)  {
+                function displayTemoignage(data) {
                     let temoignages = data.temoignages;
-                    temoignages.forEach(temoignage =>  {
+                    temoignages.forEach(temoignage => {
                         const nomclient = document.createElement("h4");
                         nonclient.textContent = temoignage.prenom;
 
@@ -117,18 +117,11 @@ function displayProducts(data)   {
                         commente.textContent = temoignage.commentaire;
 
                         const experience = document.createElement("p");
-                        experience.textContent = 
+                        experience.textContent =
 
-                        temoignage.typeExperience;
+                            temoignage.typeExperience;
                         const note = document.createElement("p");
 
-
-                    }
-                )
-
-                
-            
-        }
-
-    });
-};
+                        note.textContent = 
+                    })}})}
+                    
