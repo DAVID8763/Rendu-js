@@ -52,6 +52,7 @@ body {
 }
 
 .hero h1 {
+   
     font-size: 2rem;
     margin-bottom: 15px;
     text-shadow: 2px 2px 5px #000;
@@ -72,9 +73,13 @@ section {
 }
 
 section h2 {
+   border:solid 5px black;
+   width: 250px;
+   margin: auto;
+   border-radius: 10PX;
     margin-bottom: 25px;
     font-size: 1.8rem;
-    color: #ff6600;
+    color: #000000;
 }
 
 .cards {
