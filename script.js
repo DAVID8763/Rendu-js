@@ -1,136 +1,100 @@
-//Etappe 1 {Html} crée les ID 
-
-
-//Etappe 2 {javasc} crée les card à partir du Html
-
-
-//Etappe 3 quels son les elements javascript et html
-
-
-// Etappe 4 
-
-//fetch button
 const avantage1 = document.getElementById("Avantage");
-
 const shop1 = document.getElementById("Shop");
-
 const temoignage1 = document.getElementById("Temoignage");
+const services1 = document.getElementById("Services");
 
-const services = document.getElementById("Services");
-
-
-const API_URL = "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/restaurant-bresilien.json"
-
-
-
+const API_URL = "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/restaurant-bresilien.json";
 
 fetch(API_URL)
     .then(reponse => reponse.json())
     .then(data => {
-        console.log('Données récupées avec succès :', data);
+        console.log('Données récupérées avec succès :', data);
 
-        console.log(data.produits);
-
-
-        displayAvantage(data);
-        displayShop(data);
+        displayProducts(data);
         displayTemoignage(data);
         displayServices(data);
     })
-
+    .catch(error => console.error("Erreur fetch :", error));
 
 function displayAvantage(data) {
     let avantages = data.avantagesclients;
-    console.log(avantage);
-
     avantages.forEach(avantage => {
-        const descris = document.createElement("p");
-        //console.log (avantage):;
-
-        descris.textContent = avantage;
-        avantage1.appendChild(descris);
-
+        const p = document.createElement("p");
+        p.textContent = avantage;
+        avantage1.appendChild(p);
     });
-
 }
-
 
 function displayProducts(data) {
-    let produits = data.produits;
-    data.forEach(produits => {
+    // let produits = data.produits;
+    // console.log(produits);
+    
+    data.plats.forEach(produit => {
         const article = document.createElement("article");
-        article.classlist.add("produit");
+        article.classList.add("produit");
+
         const title = document.createElement("h3");
+        title.textContent = produit.nom;
+
         const descris = document.createElement("p");
+        descris.textContent = produit.description;
+
         const image = document.createElement("img");
-
-
-        title.textContent = produits.nom;
-        descris.textContent = produits.description;
-    })
-
-}
-        console.log(produits)['image_url'];
-        image.src = produits['image url'];
-
-
+        image.src = produit["image-url"];
+        image.alt = produit.nom;
 
         article.appendChild(title);
-        article.appendChild(descirs);
+        article.appendChild(descris);
         article.appendChild(image);
 
-        function displayProducts(data) {
+        shop1.appendChild(article);
+    });
+}
 
-        }
+function displayServices(data) {
+    let services = data.services;
+    services.forEach(service => {
+        const article = document.createElement("article");
+        article.classList.add("produit");
 
-        function displayServices(data) {
+        const title = document.createElement("h3");
+        title.textContent = service.nom;
 
-            let services = data.services;
+        const descris = document.createElement("p");
+        descris.textContent = service.desc;
 
-            services.forEach(services => {
-                const servicesclients = document.createElement("article");
-                servicesclients.classList.add("produit");
-                const title = document.createElement("h3");
-                const descris = document.createElement("p");
+        article.appendChild(title);
+        article.appendChild(descris);
 
+        services1.appendChild(article);
+    });
+}
 
+function displayTemoignage(data) {
+    let temoignages = data.temoignages;
+    temoignages.forEach(temoignage => {
+        const div = document.createElement("div");
+        div.classList.add("temoignage");
 
+        const nomclient = document.createElement("h4");
+        nomclient.textContent = temoignage.prenom;
 
-                title.textContent = services.nom;
-                descri.textContent = services.description;
+        const commentaire = document.createElement("p");
+        commentaire.textContent = temoignage.commentaire;
 
+        const experience = document.createElement("p");
+        experience.textContent = temoignage.typeExperience;
 
+        const note = document.createElement("p");
+        note.textContent = `Note : ${temoignage.note || "N/A"}`;
 
-                servicesclients.appendChild(title);
-                servicesclients.appendChild(descris);
+        div.appendChild(nomclient);
+        div.appendChild(commentaire);
+        div.appendChild(experience);
+        div.appendChild(note);
 
-                service1.appendChild(servicesclients);
+        temoignage1.appendChild(div);
+    });
+}
 
-
-                function displayTemoignage(data) {
-                    let temoignages = data.temoignages;
-                    temoignages.forEach(temoignage => {
-                        const nomclient = document.createElement("h4");
-                        nonclient.textContent = temoignage.prenom;
-
-                        const commente = document.createElement("p");
-                        commente.textContent = temoignage.commentaire;
-
-                        const experience = document.createElement("p");
-                        experience.textContent =
-
-                            temoignage.typeExperience;
-                        const note = document.createElement("p");
-
-                        note.textContent ='${temoignage}/';
-
-                        nomclient.appendChild (commente);  
-                        nomclient.appendChild (experience); 
-                        nomclient.appendChild (note); 
-
-                        temoin.appendChild(nomclient);
-                        
-                    }
-
-                    )}})}
                 
